@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        New script - edu-meta.com
 // @namespace   Violentmonkey Scripts
-// @match       https://www.edu-meta.com/clazz/login-clazz.php*
+// @match       https://www.edu-meta.com/clazz/play.php*
 // @grant       none
 // @version     1.0
 // @author      -
@@ -12,13 +12,13 @@ function GetQueryString(name) {
          var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配
          var context = "";
 
-     if (r != null)
+     if (r != null){
      context = r[2];
+     }
     reg = null;
     r = null;
     return context == null || context == "" || context == "undefined" ? "" : context;
  }
-
 var lesson_id=GetQueryString("lesson_id");
 var courseid=GetQueryString("courseid");
 var title=GetQueryString("title");
@@ -29,5 +29,5 @@ var potplayer_live_rtmp="potplayer://rtmp://live.edu-meta.com/live/" + lesson_id
 var potplayer_live_m3u8="potplayer://http://live.edu-meta.com/live//" + lesson_id +".m3u8" ;		//直播_延迟大（15-30s）_全界面
 // window.open( potplayer_live_rtmp );              //打开potplayer放直播
 // window.open( potplayer_live_m3u8 );              //打开potplayer放直播
-window.open( potplayer_live_m3u8, );              //打开potplayer放录播
-//window.open( potplayer_live_flv );              //打开potplayer放录播
+//window.open( potplayer_rec_m3u8);                 //打开potplayer放录播
+window.open( potplayer_rec_flv );              //打开potplayer放录播
