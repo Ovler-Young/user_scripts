@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        New script - edu-meta.com
+// @name        edu-meta.com
 // @namespace   Violentmonkey Scripts
 // @match       https://www.edu-meta.com/clazz/play.php*
 // @grant       none
@@ -8,7 +8,7 @@
 // @description 2021/8/10 下午2:42:06
 // ==/UserScript==
 function GetQueryString(name) {
-         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+         var reg = new RegExp(`(^|&)${name}=([^&]*)(&|\$)`, "i");
          var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配
          var context = "";
 
