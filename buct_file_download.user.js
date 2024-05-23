@@ -24,8 +24,8 @@ function GetQueryString(name) {
     return context == null || context == "" || context == "undefined" ? "" : context;
 }
 var fileid=GetQueryString("fileid");
-var resid=GetQueryString("resid");
-var lid=GetQueryString("lid");
+//var resid=GetQueryString("resid");
+//var lid=GetQueryString("lid");
 var download_url="https://course.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=" + fileid
 //var pdf_url="http://course.buct.edu.cn/meol/analytics/resPdfShow.do?resId=" + resid + "&lid=" + lid
 //var download_url="http://course-proxy2.buct.edu.cn/meol/common/script/download.jsp?fileid=" + fileid + "&resid=" + resid
